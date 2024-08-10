@@ -30,26 +30,26 @@ function Sidebar() {
                     </h2>
                 )}
             </div>
-            <div className=" divide-y-[1px] divide-background">
+            <div className="">
                 <NavLink to={`/users/${userId}/details/summary`}
                     className={({ isActive }) => {
                         setSummaryActive(isActive);
-                        return "flex justify-start items-center gap-2 p-3 font-semibold text-lg text-background"
+                        return "flex justify-start items-center gap-2 p-2 font-semibold text-lg text-background"
                     }
                     }>
                     <span><MdSummarize size={25} /></span>
                     <h2>Progress Summary</h2>
-                    <span className={`size-2 rounded-full ${summaryActive ? "bg-background" : "bg-primary"}`}></span>
+                    <span className={`w-5 h-4 flex justify-center items-center rounded-md ${summaryActive ? "bg-background" : "bg-primary"}`}><span className={`size-[6px] rounded-full bg-primary`}></span></span>
                 </NavLink>
                 <NavLink to={`/users/${userId}/details/report`}
                     className={({ isActive }) => {
                         setReportActive(isActive);
-                        return "flex justify-start items-center gap-2 p-3 font-semibold text-lg text-background"
+                        return "flex justify-start items-center gap-2 p-2 font-semibold text-lg text-background"
                     }
                     }>
                     <span><BiSolidReport size={25} /></span>
                     <h2>Detailed Report</h2>
-                    <span className={`size-2 rounded-full ${reportActive ? "bg-background" : "bg-primary"}`}></span>
+                    <span className={`w-5 h-4 flex justify-center items-center rounded-md ${reportActive ? "bg-background" : "bg-primary"}`}><span className={`size-[6px] rounded-full bg-primary`}></span></span>
                 </NavLink>
             </div>
             <NavLink to={"/"} className="group flex justify-center items-center gap-1 mt-5 text-background cursor-pointer text-lg">

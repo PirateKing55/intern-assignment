@@ -51,12 +51,12 @@ function UserReport() {
                 </Card>
                 <Card className='flex gap-10 flex-wrap'>
                     <Card className='flex flex-col'>
-                        <SubHeading label='Overall Proficiency' />
-                        <p className='text-primaryText text-lg font-semibold'>{user?.detailedReport.overallProficiency}</p>
                         <SubHeading label='Level wise scores' />
                         <BarChartComponent user={user} />
+                        <SubHeading label='Overall Proficiency' />
+                        <p className='text-primaryText text-lg font-semibold'>{user?.detailedReport.overallProficiency}</p>
                     </Card>
-                    <Card className='flex flex-col'>
+                    <Card className='flex flex-col mb-5'>
                         <SubHeading label='Analysis' />
                         {Object.entries(user?.detailedReport.analysis).map(([key, value]) => (
                             <Card key={key} className='flex flex-col mb-2'>

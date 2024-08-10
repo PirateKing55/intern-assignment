@@ -6,13 +6,13 @@ interface BarChartComponentProps {
 }
 
 const chartSetting = {
-    xAxis: [
+    yAxis: [
         {
             label: 'Score',
         },
     ],
     width: 300,
-    height: 200,
+    height: 300,
 };
 
 const valueFormatter = (value: number | null) => `${value}`;
@@ -23,14 +23,17 @@ function BarChartComponent({ user }: BarChartComponentProps) {
             <BarChart
                 colors={["#fe5b5f"]}
                 dataset={user?.detailedReport.levelScores}
-                yAxis={[{ scaleType: 'band', dataKey: 'level' }]}
+                xAxis={[
+                    {
+                        scaleType: "band",
+                        dataKey: "level",
+                    },
+                ]}
                 series={[{ dataKey: 'score', label: 'Score', valueFormatter }]}
-                layout="horizontal"
-                grid={{ vertical: true }}
                 {...chartSetting}
             />
         </div>
-    )
+    );
 }
 
-export default BarChartComponent
+export default BarChartComponent;
